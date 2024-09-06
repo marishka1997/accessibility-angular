@@ -1,0 +1,36 @@
+<main role="main">
+    <h1>Accessibility Demo</h1>
+    <section aria-labelledby="section1-header">
+        <h2 id="section1-header">Keyboard Navigation</h2>
+        <p>
+            This section demonstrates how to make a component navigable using keyboard alone.
+        </p>
+        <button (click)="showAlert()">Click Me</button>
+    </section>
+    <section aria-labelledby="section2-header">
+        <h2 id="section2-header">Form Accessibility</h2>
+        <form (submit)="onSubmit()">
+            <div>
+                <label for="username">Username</label>
+                <input id="username" type="text" required aria-required="true" />
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input id="email" type="email" required aria-required="true" />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+    <section aria-labelledby="section3-header">
+        <h2 id="section3-header">ARIA Roles and Properties</h2>
+        <p role="alert" @if {{showingAlert}}>This is an important alert message!</p>
+        <div role="button" tabindex="0" (click)="toggleAlert()" (keyup.enter)="toggleAlert()">
+            Toggle Alert
+        </div>
+    </section>
+    <!-- <section aria-labelledby="section4-header">
+        <h2 id="section4-header">Text Alternatives</h2>
+        <img src="example-image.jpg" alt="Descriptive text about the image" />
+        <button aria-label="Save">💾</button>
+    </section> -->
+</main>
